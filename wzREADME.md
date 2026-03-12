@@ -72,7 +72,7 @@
    └─ index.css       # Tailwind 指令和基础样式
 
 ## 常见问题
-1. 启动时报错：crypto.getRandomValues is not a function
+启动时报错：crypto.getRandomValues is not a function
 原因：Node 版本太旧（例如 16.13.1），而 Vite 5 需要更高版本的 Node。
 
 解决方案：
@@ -88,24 +88,5 @@ npm run dev
 
 ！！！ 要注意，可能会有其他版本Node，要在环境配置里将Node.24放在其他版本上边。
 
-2. 浏览器页面空白，终端报 [postcss] Unexpected token (1:1)
-可能原因：tailwind.config.js 中存在 Git 合并冲突标记，例如：
 
-<<<<<<< HEAD
-...
-=======
-...
->>>>>>> xxxx
-解决方案：
-打开 tailwind.config.js，删除所有 <<<<<<< / ======= / >>>>>>> 这些标记，只保留一份合法配置，例如：
-
-/** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: 'class',
-  content: ['./index.html', './src/**/*.{js,jsx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
 
